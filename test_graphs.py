@@ -63,14 +63,14 @@ def get_random_connected_graph(n, p, max_w, seed=None):
 
 	return graph
 
-def bayg29():
+def bayg29(filename="bayg29.tsp"):
 	"""
 	return the graph for the bayg29 data set from the TSPLIB.
 	Optimal tour is [0, 27, 5, 11, 8, 25, 2, 28, 4, 20, 1, 19, 9, 3, 14, 17, 13, 16, 21, 10, 18, 24, 6, 22, 7, 26, 15, 12, 23]
 	with a weight of 1610
 	"""
 	graph = dict()
-	with open("bayg29.tsp") as f:
+	with open(filename) as f:
 		for x, line in enumerate(f):
 			for y, w in enumerate(line.split()):
 				graph[(x,y+1+x)] = int(w)
